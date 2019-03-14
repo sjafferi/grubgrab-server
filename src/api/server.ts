@@ -58,8 +58,8 @@ class Server {
   };
 
   listen = () => {
-    this.app.listen(process.env.API_SERVER_PORT || 9010);
-    console.info(`Listening on port ${process.env.API_SERVER_PORT || 9010}`);
+    this.app.listen(process.env.PORT || 9010);
+    console.info(`Listening on port ${process.env.PORT || 9010}`);
   };
 }
 

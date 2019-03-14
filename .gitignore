@@ -2,5 +2,6 @@ lib
 node_modules
 yarn-error.log
 .env
-.keys
+
 tmp
+.keys/*
