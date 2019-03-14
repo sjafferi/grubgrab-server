@@ -1,6 +1,6 @@
 # GrubGrab Server
 
-Welcome to the grubgrab api
+Welcome to the GrubGrab api
 
 ## Getting Started
 
