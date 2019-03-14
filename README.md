@@ -13,7 +13,7 @@ How to get it running
 If you haven't created a local postgres db called grubgrab, do that now
 
 ```
-(install postgres & create db)[https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb]
+install postgres & create db => https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb
 ```
 
 Install dependencies
