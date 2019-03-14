@@ -1,17 +1,17 @@
 {
-  "name": "myin-api",
-  "version": "2.0.0",
+  "name": "grubgrab-api",
+  "version": "1.0.0",
   "scripts": {
     "dev": "nodemon --exec babel-node --extensions '.ts,js' index.ts",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build": "rm -rf ./lib && npm run build:types && npm run build:js",
+    "build": "./scripts/compile.sh",
     "build:types": "tsc",
-    "build:js": "babel src platform config --out-dir lib --extensions \".ts,js\" --source-maps inline",
-    "server": "node lib/server.js",
+    "build:js": "babel src --out-dir lib --extensions \".ts,js\" --source-maps inline",
+    "server": "NODE_ENV=production node lib/api/server.js",
     "start": "npm run build && npm run server",
     "add-migration": "./node_modules/.bin/sequelize migration:create --name $name",
-    "migrate": "./node_modules/.bin/sequelize db:migrate:undo:all && ./node_modules/.bin/sequelize db:migrate  --env production"
+    "migrate": "./node_modules/.bin/sequelize db:migrate:undo:all && ./node_modules/.bin/sequelize db:migrate"
   },
   "dependencies": {
     "@types/auth-header": "^1.0.0",

@@ -14,26 +14,26 @@
     "paths": {
       "*": [
         "*",
-        "src/*",
+        "src/api/*",
         "node_modules/*"
       ],
       "config": [
-        "config"
+        "src/config"
       ],
       "@platform": [
-        "platform"
+        "src/platform"
       ],
       "@platform/*": [
-        "platform/*"
+        "src/platform/*"
       ],
     }
   },
   "exclude": [
     "node_modules",
-    "config",
-    "lib"
+    "src/config",
+    "src/lib"
   ],
   "include": [
-    "src/**/*"
+    "src/**/*/*"
   ]
 }

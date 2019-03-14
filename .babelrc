@@ -16,14 +16,14 @@
       "module-resolver",
       {
         "root": [
-          "./src/**"
+          "./src/api/**"
         ],
         "alias": {
-          "@platform": "./platform",
-          "config": "./config",
+          "@platform": "./src/platform",
+          "config": "./src/config",
           "keys": "./.keys",
-          "middleware": "./src/middleware",
-          "controllers": "./src/controllers"
+          "middleware": "./src/api/middleware",
+          "controllers": "./src/api/controllers"
         }
       }
     ],

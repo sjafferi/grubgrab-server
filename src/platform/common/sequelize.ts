@@ -4,9 +4,9 @@ import Sequelize from "sequelize";
 declare global {
   type SequelizeAttributes<T extends { [key: string]: any }> = {
     [P in keyof T]:
-      | string
-      | Sequelize.DataTypeAbstract
-      | Sequelize.DefineAttributeColumnOptions
+    | string
+    | Sequelize.DataTypeAbstract
+    | Sequelize.DefineAttributeColumnOptions
   };
 }
 
@@ -14,7 +14,7 @@ class DatabaseConnection {
   sequelize: Sequelize.Sequelize;
 
   constructor() {
-    this.sequelize = new Sequelize(config.db.uri);
+    this.sequelize = new Sequelize(config.db.uri, { dialect: config.db.sequelize.dialect });
   }
 }
 
