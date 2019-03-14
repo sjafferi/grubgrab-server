@@ -4,7 +4,7 @@ import db from "@platform/common/sequelize";
 import Sequelize from "sequelize";
 import uuid from "uuid/v4";
 
-import FoodCategory from "./FoodCategories";
+import FoodCategory, { FoodCategorySchema, IFoodCategory } from "./FoodCategory";
 import Restaurant from "./Restaurant";
 
 export const FoodItemSchema = joi.object().keys({
@@ -13,7 +13,7 @@ export const FoodItemSchema = joi.object().keys({
   priceCents: joi.number().required(),
   calories: joi.number(),
   type: joi.string().valid("entree", "side", "dessert").required(),
-  category: joi.string()
+  category: FoodCategorySchema
 });
 
 export const FoodItemsSchema = joi.array().items(FoodItemSchema);
@@ -27,7 +27,7 @@ export interface IFoodItem {
   priceCents: number,
   calories: number,
   type: IFoodType,
-  category?: string,
+  category?: IFoodCategory,
 }
 
 type FoodItemInstance = Sequelize.Instance<IFoodItem> & IFoodItem & {

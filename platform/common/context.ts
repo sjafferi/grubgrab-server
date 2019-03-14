@@ -5,9 +5,9 @@ interface IParams {
 }
 
 export default class Context {
-  _user: IUser;
+  user: IUser;
 
   constructor(params: IParams) {
-    this._user = params.user;
+    this.user = params.user;
   }
 }

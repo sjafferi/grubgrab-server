@@ -30,6 +30,10 @@ export default {
       return next(new Errors.MissingParameterError("id"));
     }
 
+    if ((req as any).context.id !== req.params.id) {
+      return next(new Errors.UnauthorizedAccessError("Cannot get another user"));
+    }
+
     let response;
     try {
       response = await User.findOne({ id: req.params.id });

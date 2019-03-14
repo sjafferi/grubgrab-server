@@ -1,33 +1,33 @@
 import db from "@platform/common/sequelize";
 import Sequelize from "sequelize";
 
-export interface IFoodCategory {
+export interface IRestaurantCategory {
   id?: string;
   name: string;
   description?: string;
 }
 
-type FoodCategoryInstance = Sequelize.Instance<IFoodCategory> & IFoodCategory;
-type FoodCategoryModel = Sequelize.Model<FoodCategoryInstance, IFoodCategory>;
+type RestaurantCategoryInstance = Sequelize.Instance<IRestaurantCategory> & IRestaurantCategory;
+type RestaurantCategoryModel = Sequelize.Model<RestaurantCategoryInstance, IRestaurantCategory>;
 
-class FoodCategory {
-  attributes: SequelizeAttributes<IFoodCategory> = {
+class RestaurantCategory {
+  attributes: SequelizeAttributes<IRestaurantCategory> = {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: Sequelize.STRING, allowNull: false },
     description: { type: Sequelize.STRING }
   };
-  model: FoodCategoryModel;
+  model: RestaurantCategoryModel;
 
   constructor() {
-    this.model = db.sequelize.define("food_categories", this.attributes);
+    this.model = db.sequelize.define("restaurant_categories", this.attributes);
 
     this.associations();
   }
 
-  create = async (category: IFoodCategory) => {
-    const FoodCategory = await this.model.create(category);
+  create = async (category: IRestaurantCategory) => {
+    const RestaurantCategory = await this.model.create(category);
 
-    return FoodCategory;
+    return RestaurantCategory;
   };
 
   upsert = async (categories: string[]) => {
@@ -41,6 +41,6 @@ class FoodCategory {
   }
 }
 
-const foodCategory = new FoodCategory();
+const foodCategory = new RestaurantCategory();
 Object.freeze(foodCategory);
 export default foodCategory;

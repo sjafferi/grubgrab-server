@@ -1,9 +1,6 @@
 import Error from "@platform/common/errors";
-import dotenv from "dotenv";
 import fs from "fs";
 import jwt from "jsonwebtoken";
-
-dotenv.load();
 
 class Jwt {
   private PUBLIC_KEY: Buffer;

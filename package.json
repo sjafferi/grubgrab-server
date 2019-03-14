@@ -11,7 +11,7 @@
     "server": "node lib/server.js",
     "start": "npm run build && npm run server",
     "add-migration": "./node_modules/.bin/sequelize migration:create --name $name",
-    "migrate-all": "./node_modules/.bin/sequelize db:migration"
+    "migrate": "./node_modules/.bin/sequelize db:migrate:undo:all && ./node_modules/.bin/sequelize db:migrate  --env production"
   },
   "dependencies": {
     "@types/auth-header": "^1.0.0",
@@ -30,8 +30,9 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
+    "cloudinary": "^1.13.2",
     "cors": "^2.8.5",
-    "dotenv": "^6.2.0",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-fileupload": "^1.1.1-alpha.2",
     "http": "^0.0.0",

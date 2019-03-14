@@ -1,7 +1,7 @@
-import Error, { PlatformError } from "@platform/common/errors";
+import Error from "@platform/common/errors";
 import bodyParser from "body-parser";
 import cors from "cors";
-import express, { NextFunction, Request, Response } from "express";
+import express from "express";
 import fileUpload from "express-fileupload";
 import * as http from "http";
 import authHandler from "middleware/auth";

@@ -53,6 +53,7 @@ const _whitelistedPrefixes = [
   `${URL_PREFIX}/users/login`,
   `${URL_PREFIX}/users/signup`,
   `${URL_PREFIX}/restaurants/signup`,
+  `${URL_PREFIX}/restaurants/all`,
   "/sockjs-node",
   "//sockjs-node"
 ];

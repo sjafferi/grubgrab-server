@@ -8,16 +8,10 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.createTable('restaurants', {
-      id: { type: Sequelize.STRING, primaryKey: true },
-      ownerId: { type: Sequelize.STRING },
-      name: { type: Sequelize.STRING },
-      city: { type: Sequelize.STRING },
+    return queryInterface.createTable('restaurant_categories', {
+      id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+      name: { type: Sequelize.STRING, allowNull: false },
       description: { type: Sequelize.STRING },
-      address: { type: Sequelize.STRING },
-      postalCode: { type: Sequelize.STRING },
-      longitude: { type: Sequelize.FLOAT },
-      latitude: { type: Sequelize.FLOAT },
       createdAt: { type: Sequelize.DATE },
       updatedAt: { type: Sequelize.DATE }
     });
@@ -30,6 +24,6 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.dropTable('restaurants');
+    return queryInterface.dropTable('restaurant_categories');
   }
 };
