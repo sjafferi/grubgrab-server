@@ -1,0 +1,44 @@
+# Project Title
+
+One Paragraph of project description goes here
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+Give examples
+```
+
+### Installing
+
+How to get it running
+
+If you haven't created a local postgres db called grubgrab, do that now
+
+```
+(install postgres & create db)[https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb]
+```
+
+Install dependencies
+
+```
+yarn
+```
+
+Run server
+
+```
+yarn dev
+```
+Should be running at localhost:9010
+
+If first time running, you'll also want to run the migrations
+
+```
+yarn migrate
+```
