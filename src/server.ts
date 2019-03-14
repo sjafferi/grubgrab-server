@@ -1,7 +1,7 @@
-import Error from "@platform/common/errors";
+import Error, { PlatformError } from "@platform/common/errors";
 import bodyParser from "body-parser";
 import cors from "cors";
-import express from "express";
+import express, { NextFunction, Request, Response } from "express";
 import fileUpload from "express-fileupload";
 import * as http from "http";
 import authHandler from "middleware/auth";
@@ -27,9 +27,11 @@ class Server {
     this.app.use(bodyParser.json({ limit: "20mb" }));
     this.app.use(bodyParser.urlencoded({ extended: true }));
 
+    this.app.use(cors());
+    this.app.options('*', cors());
+
     this.app.use(authHandler());
 
-    this.app.use(cors());
     this.app.use(fileUpload());
 
     // ===== Register Routes =====
@@ -47,7 +49,7 @@ class Server {
       }
     );
 
-    this.app.use(errorHandler());
+    this.app.use(errorHandler);
   };
 
   setupServer = () => {

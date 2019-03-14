@@ -1,10 +1,9 @@
 import { PlatformError } from '@platform/common/errors';
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
-const errorHandler = (err: PlatformError, req: Request, res: Response, ) => {
+const errorHandler = (err: PlatformError, req: Request, res: Response, next: NextFunction) => {
   const code = err.statusCode || 500;
-  const message = err.message;
-  return res.status(code).json(message);
+  return res.status(code).json({ error: err });
 };
 
-export default () => errorHandler;
+export default errorHandler;

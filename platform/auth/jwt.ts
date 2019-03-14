@@ -63,7 +63,7 @@ class Jwt {
 
   generate = async (payload: any) => {
     const buff = await this.sign(payload);
-    return this.encodeKey(buff);
+    return this.encodeKey(buff as any);
   };
 
   private encodeKey = (key: ArrayBuffer) => {

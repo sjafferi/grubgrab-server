@@ -1,6 +1,5 @@
 import db from "@platform/common/sequelize";
 import Sequelize from "sequelize";
-import uuid from "uuid/v4";
 
 export interface IFoodCategory {
   id?: string;

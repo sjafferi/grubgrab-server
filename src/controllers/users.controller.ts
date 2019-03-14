@@ -53,7 +53,9 @@ export default {
       response = await User.findOne(req.body);
       token = await User.generateToken(response);
     } catch (e) {
-      return next(e);
+      console.log(e);
+      next(e);
+      return;
     }
 
     res.status(200).send({ ...response, token });
