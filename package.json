@@ -9,7 +9,7 @@
     "build:types": "tsc",
     "build:js": "babel src --out-dir lib --extensions \".ts,js\" --source-maps inline",
     "server": "NODE_ENV=production node lib/api/server.js",
-    "start": "npm run build && npm run server",
+    "start": "npm run server",
     "add-migration": "./node_modules/.bin/sequelize migration:create --name $name",
     "migrate": "./node_modules/.bin/sequelize db:migrate:undo:all && ./node_modules/.bin/sequelize db:migrate"
   },
