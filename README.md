@@ -6,14 +6,6 @@ Welcome to the grubgrab api
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Ask @msajaffe about deployment and ssh keys.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
 ### Installing
 
 How to get it running
